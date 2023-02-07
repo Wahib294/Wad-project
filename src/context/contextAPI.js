@@ -18,8 +18,8 @@ export const AppContext = (props) => {
     setLoading(true);
     fetchDatafromApi(`search/?q=${query}`)
       .then((data) => {
-        console.log(data);
-        // setSearchResults(data);
+        console.log(data.data.contents);
+        setSearchResults(data.data.contents);
         setLoading(false);
       })
       .catch((err) => {
