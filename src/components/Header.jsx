@@ -14,7 +14,7 @@ import { Context } from "../context/contextAPI";
 import Loader from "../shared/loader";
 
 const Header = () => {
-  const { searchQuery, setsearchQuery } = useState("");
+  const [searchQuery, setsearchQuery] = useState("");
 
   const { loading, mobileMenu, setMobileMenu } = useContext(Context);
 
@@ -72,7 +72,7 @@ const Header = () => {
             placeholder="Search"
             value={searchQuery}
             onChange={(e) => setsearchQuery(e.target.value)}
-            onKeyup={searchQueryHandler}
+            onKeyp={searchQueryHandler}
           />
         </div>
         <button className="w-[40px] md:w-[60px] h-8 md:h-10 flex items-center justify-center border border-l-0 border-[#303030] rounded-r-3xl bg-white/[0.1]">
@@ -89,7 +89,7 @@ const Header = () => {
           </div>
         </div>
         <div className="flex h-8 w-8 overflow-hidden rounded-full md:ml-4">
-          <img src="https://xsgames.co/randomusers/assets/avatars/female/67.jpg" />
+          <img src="https://xsgames.co/randomusers/assets/avatars/male/67.jpg" />
         </div>
       </div>
     </div>
