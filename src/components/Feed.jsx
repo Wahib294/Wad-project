@@ -6,9 +6,11 @@ import VideoCard from "./VideoCard";
 
 const Feed = () => {
   const { loading, searchResults } = useContext(Context);
+  const { setSelectedCategory } = useContext(Context);
 
   useEffect(() => {
     document.getElementById("root").classList.remove("custom-h");
+    setSelectedCategory("Home");
   }, []);
 
   return (
@@ -20,9 +22,7 @@ const Feed = () => {
             searchResults &&
             searchResults.map((item, index) => {
               if (item.type !== "video") return false;
-              return (
-                <VideoCard key={index} video={item?.video} />
-              );
+              return <VideoCard key={index} video={item?.video} />;
             })}
         </div>
       </div>
