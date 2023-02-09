@@ -21,7 +21,7 @@ const Feed = () => {
             searchResults.map((item, index) => {
               if (item.type !== "video") return false;
               return (
-                <VideoCard key={item?.video?.videoId} video={item?.video} />
+                <VideoCard key={index} video={item?.video} />
               );
             })}
         </div>
